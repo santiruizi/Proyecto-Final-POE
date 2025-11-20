@@ -1,0 +1,13 @@
+com\mycompany\parcial2poe\M_Paciente\FuncionesPacientes.class
+com\mycompany\parcial2poe\M_Paciente\IngresoPaciente.class
+com\mycompany\parcial2poe\M_Empleados\IngresoEmpleados.class
+com\mycompany\parcial2poe\M_Empleados\Empleado.class
+com\mycompany\parcial2poe\M_Empleados\ModificarE.class
+com\mycompany\parcial2poe\M_Paciente\ModificarP.class
+com\mycompany\parcial2poe\Main.class
+com\mycompany\parcial2poe\M_Paciente\m_Paciente.class
+com\mycompany\parcial2poe\InterfazMain.class
+com\mycompany\parcial2poe\M_Empleados\FuncionesEmpleados.class
+com\mycompany\parcial2poe\M_Empleados\m_Empleado.class
+com\mycompany\parcial2poe\M_Paciente\Paciente.class
+com\mycompany\parcial2poe\Persona.class
