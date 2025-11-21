@@ -31,6 +31,8 @@ public class Main {
             opc = Integer.valueOf(JOptionPane.showInputDialog("Clínica Hells Pass"+"\n"+
                                                                 "1. Modulo pacientes."+"\n"+
                                                                 "2. Modulo empleado."+"\n"+
+                                                                "3. Modulo Consultorio"+"\n"+
+                                                                "4. Modulo Citas"+"\n"+
                                                                 "Digite la opción que desee: "));
             
             switch(opc){
@@ -43,8 +45,16 @@ public class Main {
                     moduloEmpleados.m_Empleado();
                     break;
                 }
+
+                case 3->{
+                    break;
+                }
+
+                case 4->{
+                    break;
+                }
                 
-                default-> {JOptionPane.showMessageDialog(null, "Opción invalida,");}
+                default-> {JOptionPane.showMessageDialog(null, "Opción invalida,"); break;}
             }
             
             opc2 = Integer.valueOf(JOptionPane.showInputDialog("Desea hacer otro proceso? (1. Si / 2. No)"));
