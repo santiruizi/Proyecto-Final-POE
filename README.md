@@ -1,11 +1,11 @@
-# Parcial de programación orientada a eventos
+# Proyecto de programación orientada a eventos
 
-## Sistema de sede Clinica Hell Pass
+## Sistema de sede Clínica Hell Pass
 
 
 Se realiza **una** solución en **Java** para el siguiente enunciado:
 
-La clínica Hells Pass va a hacer una sede en la ciudad y desea que se realice una solución que permita controlar las citas de los pacientes con los médicos generales o de otros procedimientos (vacunas, curaciones leves, etc), que las hacen las enfermeras, en los consultorios correspondientes.
+La clínica Hells Pass va a hacer una sede en la ciudad y desea que se realice una solución que permita controlar las citas de los pacientes con los médicos generales o de otros procedimientos **(vacunas, curaciones leves, etc),** que las hacen las enfermeras, en los consultorios correspondientes.
 
 ## Modulo Pacientes
 
@@ -67,3 +67,29 @@ La clínica Hells Pass va a hacer una sede en la ciudad y desea que se realice u
 * Listar todos los pacientes que han realizado citas por fecha.
 
 * Modificar citas en fecha u hora y estado de la cita.
+
+## Propuesta de Desarrollo
+
+
+* Se **plantean 4 módulos**,  mas una bd de datos relaciones.
+* Modulo **Pacientes**.
+* Modulo **Empleados**.
+* Modulo **Citas**.
+* Modulo **Consultorio**.
+
+ **Modulo Pacientes**:
+* Este módulo se dividió en 5 etapas las cuales son:
+* **1. FuncionesPacientes:** En las cuales se trabajaron lo que son metodos de busqueda y ordenación **.**
+*  **2. IngresoPacientes:** Esta funcionalidad me permite el ingreso de un nuevo paciente **.**
+* **3.  ModificarP:** Esta funcionalidad permite al paciente hacer alguna **modificación** en los datos personales que registro los cuales puedes ser,  **dirección, teléfono fijo, celular, ciudad de residencia, país de residencia, ocupación.**
+*  **4. Paciente:** Esta funcionalidad es la maqueta que se usa para el registro de un empleado **ademas cabe aclarar**, que esta **Entidad**, es heredada de la  **Entidad Persona**, la cual comparte los **atributos primarios**.
+
+## Tecnologías a usar
+
+
+- git.
+- github
+- spring
+- spring-bot.
+- Java
+- Mysql.
