@@ -15,6 +15,10 @@ public class Modulo_Citas {
 
         int opc, opc2;
 
+        Citas[] newCita = new Citas[50];
+        FuncionesDeCitas funcionesCita = new FuncionesDeCitas();
+        int contadorCitas = 0;
+        
         do{
             opc = Integer.valueOf(JOptionPane.showInputDialog("Menú de Citas"+"\n"+
                                                                 "1. Ingreso de una nueva cita."+"\n"+
@@ -31,26 +35,31 @@ public class Modulo_Citas {
                 }
 
                 case 2->{
+                    if(funcionesCita.validarExistenciaCita(contadorCitas)) break;
                     break;
                 }
 
                 case 3->{
+                    if(funcionesCita.validarExistenciaCita(contadorCitas)) break;
                     break;
                 }
 
                 case 4->{
+                    if(funcionesCita.validarExistenciaCita(contadorCitas)) break;
                     break;
                 }
 
                 case 5->{
+                    if(funcionesCita.validarExistenciaCita(contadorCitas)) break;
                     break;
                 }
 
                 case 6->{
+                    if(funcionesCita.validarExistenciaCita(contadorCitas)) break;
                     break;
                 }
 
-                default -> { JOptionPane.showMessageDialog(null, "Opción invalida."); break;}
+                default -> {JOptionPane.showMessageDialog(null, "Opción invalida."); break;}
             }
             opc2 = Integer.valueOf(JOptionPane.showInputDialog("Desea hacer otra proceso? (1. Si / 2.No)"));
         }while(opc2 != 2);

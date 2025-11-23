@@ -18,6 +18,7 @@ public class Menu_Consultorio {
         Integer opc, opc2;
         int contadorConsultorio = 0;
         Consultorio[] consultas = new Consultorio[50];
+        FuncionesConsultorio funcionesCon = new FuncionesConsultorio(); 
         
         do{
             opc = Integer.valueOf(JOptionPane.showInputDialog("Menú Consultorio"+"\n"+
@@ -29,6 +30,43 @@ public class Menu_Consultorio {
                                                                 "6. Disponibilidad de consultorio por cita."+"\n"+
                                                                 "7. Modificar datos."));
             switch(opc){
+                
+                case 1->{
+                    
+                    
+                    break;
+                }
+                
+                case 2->{
+                    if(funcionesCon.validarExistenciaConsulta(contadorConsultorio)) break;
+                    break;
+                }
+                
+                case 3->{
+                    if(funcionesCon.validarExistenciaConsulta(contadorConsultorio)) break;
+                    
+                    break;
+                }
+                
+                case 4->{
+                    if(funcionesCon.validarExistenciaConsulta(contadorConsultorio)) break;
+                    break;
+                }
+                
+                case 5->{
+                    if(funcionesCon.validarExistenciaConsulta(contadorConsultorio)) break;
+                    break;
+                }
+                
+                case 6->{
+                    if(funcionesCon.validarExistenciaConsulta(contadorConsultorio)) break;
+                    break;
+                }
+                
+                case 7->{
+                    if(funcionesCon.validarExistenciaConsulta(contadorConsultorio)) break;
+                    break;
+                }
                 
                 default->{JOptionPane.showMessageDialog(null, "Opción invalida."); break;}
             }
