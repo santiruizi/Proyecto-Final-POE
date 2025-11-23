@@ -12,8 +12,9 @@ package com.mycompany.parcial2poe;
  * Gabriela Lourdes Gomez.
  */
 
-import com.mycompany.parcial2poe.M_Paciente.m_Paciente;
-import com.mycompany.parcial2poe.M_Empleados.m_Empleado;
+import com.mycompany.parcial2poe.M_Paciente.Modulo_Paciente;
+import com.mycompany.parcial2poe.M_Empleados.Modulo_Empleado;
+import com.mycompany.parcial2poe.M_Citas.Modulo_Citas;
 
 import javax.swing.*;
 
@@ -24,8 +25,9 @@ public class Main {
         
         Integer opc, opc2;
         
-        m_Empleado moduloEmpleados = new m_Empleado();
-        m_Paciente moduloPacientes = new m_Paciente();
+        Modulo_Empleado moduloEmpleados = new Modulo_Empleado();
+        Modulo_Paciente moduloPacientes = new Modulo_Paciente();
+        Modulo_Citas moduloCitas = new Modulo_Citas();
         
         do{
             opc = Integer.valueOf(JOptionPane.showInputDialog("Clínica Hells Pass"+"\n"+
@@ -51,6 +53,7 @@ public class Main {
                 }
 
                 case 4->{
+                    moduloCitas.m_Citas();
                     break;
                 }
                 

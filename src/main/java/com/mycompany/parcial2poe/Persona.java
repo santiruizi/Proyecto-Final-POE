@@ -23,11 +23,13 @@ public class Persona {
     private String direccion;
     private String ciudadDeResidencia;
     private String paisDeResidencia;
+    private String ocupacion;
+    private Integer celular;
     private Integer telefonoFijo;
 
     // Constructor
     
-    public Persona(String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String direccion, Integer telefonoFijo) {
+    public Persona(String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular) {
         this.tipoDeDocumento = tipoDeDocumento;
         this.numeroDeDocumento = numeroDeDocumento;
         this.nombreCompleto = nombreCompleto;
@@ -35,7 +37,9 @@ public class Persona {
         this.fechaDeNacimiento = fechaDeNacimiento;
         this.ciudadDeResidencia = ciudadDeResidencia;
         this.paisDeResidencia = paisDeResidencia;
+        this.ocupacion = ocupacion;
         this.telefonoFijo = telefonoFijo;
+        this.celular = celular;
     }
 
     // Tipo de documento
@@ -107,6 +111,26 @@ public class Persona {
         this.paisDeResidencia = paisDeResidencia;
     }
     
+    // Ocupación.
+    
+    public String getOcupacion(){
+        return ocupacion;
+    }
+    
+    public void setOcupacion(String ocupacion){
+        this.ocupacion = ocupacion;
+    }
+    
+    // Celular
+    
+    public Integer getCelular(){
+        return celular;
+    }
+    
+    public void setCelular(Integer celular){
+        this.celular = celular;
+    }
+    
     // Telefono fijo
     
     public Integer getTelefonoFijo(){
@@ -121,10 +145,12 @@ public class Persona {
                                             "Tipo de documento: "+tipoDeDocumento+"\n"+
                                             "Numero de documento: "+numeroDeDocumento+"\n"+
                                             "Nombre completo: "+nombreCompleto+"\n"+
-                                            "Fecha de nacimiento"+fechaDeNacimiento+"\n"+
+                                            "Fecha de nacimiento: "+fechaDeNacimiento+"\n"+
                                             "Direción: "+ direccion+"\n" +
                                             "Ciudad de residencia: "+ciudadDeResidencia+"\n"+
                                             "Pais de residencia: "+paisDeResidencia+"\n"+
+                                            "Ocupación: "+ocupacion+"\n"+
+                                            "Celular: "+celular+"\n"+
                                             "Telefono fijo: "+telefonoFijo);
     }
 }

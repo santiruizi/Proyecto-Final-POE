@@ -95,7 +95,19 @@ public class IngresoPaciente {
             regimenContributivo = JOptionPane.showInputDialog("Digite su regimen contributivo(Contributivo o Subsidiado)");
         }
         
-        Paciente newPaciente = new Paciente("defecto", 0, "defecto", LocalDate.of(2025, 11, 5), "defecto", "defecto", "defecto", 0, "defecto", 0, "defecto", "defecto");
+        Paciente newPaciente = new Paciente("C.C.",
+        1020304050,
+        "Ana María Pérez López",
+        LocalDate.of(1995, 8, 15),
+        "Carrera 10 # 50-25",
+        "Bogotá",
+        "Colombia",
+        "Ingeniera de Sistemas",
+        123,
+        123,
+        "Sura",
+        "contributivo",
+        false);
         
         newPaciente.setTipoDeDocumento(tipoDeDocumento);
         newPaciente.setNumeroDeDocumento(numeroDeDocumento);
@@ -111,7 +123,7 @@ public class IngresoPaciente {
         newPaciente.setRegimenContributivo(regimenContributivo);
         
         pacientes[contadorPacientes] = newPaciente;
-       
+    
         JOptionPane.showMessageDialog(null, "El registro del paciente fue un exito.");
         return 1 + contadorPacientes;
     }

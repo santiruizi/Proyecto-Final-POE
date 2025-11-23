@@ -85,7 +85,17 @@ public class IngresoEmpleados {
         }
         
         
-        Empleado newEmpleado = new Empleado("defecto", 0, "defecto", LocalDate.of(2000, 01, 1), "direccion", "defecto", "defecto","defecto", 0, 0);
+        Empleado newEmpleado = new Empleado("C.C.",
+        1020304050,
+        "Ana María Pérez López",
+        LocalDate.of(1995, 8, 15),
+        "Carrera 10 # 50-25",
+        "Bogotá",
+        "Colombia",
+        "Enfermera profesional",
+        123,
+        123,
+        "Jefe de enfermeria");
         
         newEmpleado.setTipoDeDocumento(tipoDeDocumento);
         newEmpleado.setNumeroDeDocumento(numeroDeDocumento);

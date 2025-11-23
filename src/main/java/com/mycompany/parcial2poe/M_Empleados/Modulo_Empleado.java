@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * Andres David Gaitan.
  * Gabriela Lourdes Gomez. 
  */
-public class m_Empleado {
+public class Modulo_Empleado {
     
     public void m_Empleado(){
         int opc, opc2;

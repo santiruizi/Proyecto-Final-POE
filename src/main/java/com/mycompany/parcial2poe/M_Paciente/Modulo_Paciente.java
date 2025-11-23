@@ -15,7 +15,7 @@ package com.mycompany.parcial2poe.M_Paciente;
 import javax.swing.*;
 import java.time.LocalDate;
 
-public class m_Paciente {
+public class Modulo_Paciente {
     
     public void m_Paciente(){
         Integer opc, opc2;

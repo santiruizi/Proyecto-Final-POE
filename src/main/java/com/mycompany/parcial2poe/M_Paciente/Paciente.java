@@ -5,45 +5,27 @@
 package com.mycompany.parcial2poe.M_Paciente;
 
 /**
- *
- * @author ruizg
+ *  Sanitago Ruiz Gallego.
+ *  Juan Camilo Garcia Durango.
+ *  Isaac Antillano Cruy.
+ *  Andres David Gaitan.
+ *  Gabriela Lourdes Gomez.
  */
 
 import com.mycompany.parcial2poe.Persona;
 import java.time.LocalDate;
+import javax.swing.*;
 
 public class Paciente extends Persona{
-    private String ocupacion;
-    private Integer celular;
     private String EPS;
     private String regimenContributivo;
+    private boolean estado;
     
-    public Paciente(String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String direccion, Integer telefonoFijo, String ocupacion, Integer celular, String EPS, String regimenContributivo){
-        super(tipoDeDocumento, numeroDeDocumento, nombreCompleto, fechaDeNacimiento, ciudadDeResidencia, paisDeResidencia, direccion, telefonoFijo);
-        this.ocupacion = ocupacion;
-        this.celular = celular;
+    public Paciente(String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular, String EPS, String regimenContributivo, boolean estado){
+        super(tipoDeDocumento, numeroDeDocumento, nombreCompleto, fechaDeNacimiento, ciudadDeResidencia, paisDeResidencia, ocupacion, direccion, telefonoFijo, celular);
         this.EPS = EPS;
         this.regimenContributivo = regimenContributivo;
-    }
-
-    // Ocupación.
-    
-    public String getOcupacion() {
-        return ocupacion;
-    }
-
-    public void setOcupacion(String ocupacion) {
-        this.ocupacion = ocupacion;
-    }
-
-    // Celular.
-    
-    public Integer getCelular() {
-        return celular;
-    }
-
-    public void setCelular(Integer celular) {
-        this.celular = celular;
+        this.estado = estado;
     }
     
     // EPS.
@@ -65,5 +47,20 @@ public class Paciente extends Persona{
         this.regimenContributivo = regimenContributivo;
     }
     
-    
+    // Estado
+
+    public boolean getEstado(){
+        return estado;
+    }
+
+    public void setEstado(boolean estado){
+        this.estado = estado;
+    }
+
+    @Override
+    public void getInfo(){
+        JOptionPane.showMessageDialog(null, "Nombre de eps que pertenece: "+EPS+"\n"+
+                                            "Regimen Contributivo: "+regimenContributivo+"\n"+
+                                            "Estado: "+estado); 
+    }
 }
