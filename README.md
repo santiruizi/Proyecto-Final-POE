@@ -92,4 +92,8 @@ La clínica Hells Pass va a hacer una sede en la ciudad y desea que se realice u
 - spring
 - spring-bot.
 - Java
+<<<<<<< HEAD
 - Mysql.
+=======
+- Mysql.
+>>>>>>> 09db45a796475db97a7ba9bc63973e3c7d09dea0
