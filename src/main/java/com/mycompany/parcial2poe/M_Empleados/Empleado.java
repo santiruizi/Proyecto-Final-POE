@@ -17,22 +17,32 @@ import java.time.LocalDate;
 import javax.swing.JOptionPane;
 
 public class Empleado extends Persona{
+    private int id_empleado;
     private String cargo;
-    private Integer idEmpleado;
     
     // Constructor ademas se hereda los atributos de la clase madre.
-    // Esta la uso para capturar los datos antes de usar Dao.
+    // Esta la uso para capturar los datos antes de usar el esquema de la .
     public Empleado(String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular, String cargo){
         // El super: es el metodo en el cual se organiza los datos heredados dentro del constructor
         super(tipoDeDocumento, numeroDeDocumento, nombreCompleto, fechaDeNacimiento, ciudadDeResidencia, paisDeResidencia, ocupacion, direccion, celular, telefonoFijo);
         this.cargo = cargo;
     }
 
-    // Este constructor ya va con Dao
-    public Empleado(String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular, String cargo, int idEmpleado){
-        super(tipoDeDocumento, numeroDeDocumento, nombreCompleto, fechaDeNacimiento, ciudadDeResidencia, paisDeResidencia, ocupacion, direccion, celular, telefonoFijo);
-        this.idEmpleado = idEmpleado;
+    public Empleado(int id_persona,String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular, String cargo, int id_empleado){
+        // El super: es el metodo en el cual se organiza los datos heredados dentro del constructor
+        super(id_persona,tipoDeDocumento, numeroDeDocumento, nombreCompleto, fechaDeNacimiento, ciudadDeResidencia, paisDeResidencia, ocupacion, direccion, celular, telefonoFijo);
         this.cargo = cargo;
+        this.id_empleado = id_empleado;
+    }
+
+    // id_empleado
+
+    public int getId_Empleado(){
+        return id_empleado;
+    }
+
+    public void setId_Empleado(int id_empleado){
+        this.id_empleado = id_empleado;
     }
     
     // Cargo
@@ -45,20 +55,13 @@ public class Empleado extends Persona{
         this.cargo = cargo;
     }
     
-    // idEmpleado
-    
-    public Integer getIdEmpleado(){
-        return idEmpleado;
-    }
-
-    public void setIdEmpleado(Integer idEmpleado){
-        this.idEmpleado = idEmpleado;
-    }
-
     @Override
     public void getInfo(){
-        JOptionPane.showMessageDialog(null, "\n"+
-                                            "ID empleado: "+ (idEmpleado != null ? idEmpleado : "No hay existencia de tal registro." )+"\n"+
-                                            "Cargo: "+cargo);
+        // Heredo los atributos de la clase base que es "Persona"
+        super.getInfo();
+        JOptionPane.showMessageDialog(null, 
+            "━━━━━━ Información Laboral ━━━━━━\n" +
+            "ID Empleado: " + (id_empleado <= 0   ? id_empleado : "Pendiente de asignar") + "\n" +
+            "Cargo: " + cargo);
     }
 }

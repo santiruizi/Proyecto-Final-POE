@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import javax.swing.*;
 
 public class Persona {
+    private int id_persona;
     private String tipoDeDocumento;
     private Integer numeroDeDocumento;
     private String nombreCompleto;
@@ -27,8 +28,8 @@ public class Persona {
     private Integer celular;
     private Integer telefonoFijo;
 
-    // Constructor
-    
+    // Constructor este es para insertar datos, y se llene el formulario, para que se inicialize la llave primaria despues del registro
+
     public Persona(String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular) {
         this.tipoDeDocumento = tipoDeDocumento;
         this.numeroDeDocumento = numeroDeDocumento;
@@ -40,6 +41,32 @@ public class Persona {
         this.ocupacion = ocupacion;
         this.telefonoFijo = telefonoFijo;
         this.celular = celular;
+    }
+
+    // Este constructor ya tiene el registro, con su valor primario
+
+    public Persona(int id_persona,String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular) {
+        this.id_persona = id_persona;
+        this.tipoDeDocumento = tipoDeDocumento;
+        this.numeroDeDocumento = numeroDeDocumento;
+        this.nombreCompleto = nombreCompleto;
+        this.direccion = direccion;
+        this.fechaDeNacimiento = fechaDeNacimiento;
+        this.ciudadDeResidencia = ciudadDeResidencia;
+        this.paisDeResidencia = paisDeResidencia;
+        this.ocupacion = ocupacion;
+        this.telefonoFijo = telefonoFijo;
+        this.celular = celular;
+    }
+
+    // Primary key
+
+    public int getId_Persona(){
+        return id_persona;
+    }
+
+    public void setId_Persona(int id_persona){
+        this.id_persona = id_persona;
     }
 
     // Tipo de documento

@@ -4,6 +4,7 @@
  */
 package com.mycompany.parcial2poe.M_Citas;
 
+import com.mycompany.parcial2poe.M_Paciente.Paciente;
 /**
  *  Santiago Ruiz Gallego.
  *  Juan Camilo Garcia Durango.
@@ -22,4 +23,6 @@ public class FuncionesDeCitas {
         }
         return false;
     }
+
+    
 }
