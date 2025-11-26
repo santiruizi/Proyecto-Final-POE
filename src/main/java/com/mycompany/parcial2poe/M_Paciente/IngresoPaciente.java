@@ -119,7 +119,7 @@ public class IngresoPaciente {
         newPaciente.setTelefonoFijo(telefonoFijo);
         newPaciente.setOcupacion(ocupacion);
         newPaciente.setCelular(celular);
-        newPaciente.setEPS(EPS);
+        newPaciente.setEps(EPS);
         newPaciente.setRegimenContributivo(regimenContributivo);
         
         pacientes[contadorPacientes] = newPaciente;

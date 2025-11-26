@@ -17,25 +17,46 @@ import java.time.LocalDate;
 import javax.swing.*;
 
 public class Paciente extends Persona{
-    private String EPS;
+    private Integer id_paciente;
+    private String eps;
     private String regimenContributivo;
     private boolean estado;
     
-    public Paciente(String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular, String EPS, String regimenContributivo, boolean estado){
+    // Se hace la captura de los datos, para despues con el otro constructor asigarle la llave y despues se hace la copia en Dao
+    public Paciente(String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular, String eps, String regimenContributivo, boolean estado){
         super(tipoDeDocumento, numeroDeDocumento, nombreCompleto, fechaDeNacimiento, ciudadDeResidencia, paisDeResidencia, ocupacion, direccion, telefonoFijo, celular);
-        this.EPS = EPS;
+        this.eps = eps;
+        this.regimenContributivo = regimenContributivo;
+        this.estado = estado;
+    }
+
+    // Constructor el cual hace el registro en Dao
+    public Paciente(int id_persona,String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular, String eps, String regimenContributivo, boolean estado, Integer id_paciente){
+        super(id_persona, tipoDeDocumento, numeroDeDocumento, nombreCompleto, fechaDeNacimiento, ciudadDeResidencia, paisDeResidencia, ocupacion, direccion, telefonoFijo, celular);
+        this.id_paciente = id_paciente;
+        this.eps = eps;
         this.regimenContributivo = regimenContributivo;
         this.estado = estado;
     }
     
-    // EPS.
+    // id_paciente
 
-    public String getEPS() {
-        return EPS;
+    public Integer getId_Paciente(){
+        return id_paciente;
     }
 
-    public void setEPS(String EPS) {
-        this.EPS = EPS;
+    public void setId_Paciente(Integer id_paciente){
+        this.id_paciente = id_paciente;
+    }
+
+    // EPS.
+
+    public String getEps() {
+        return eps;
+    }
+
+    public void setEps(String eps) {
+        this.eps = eps;
     }
 
     // Regimen Contributivo
@@ -49,7 +70,7 @@ public class Paciente extends Persona{
     
     // Estado
 
-    public boolean getEstado(){
+    public boolean isEstado(){
         return estado;
     }
 
@@ -59,7 +80,10 @@ public class Paciente extends Persona{
 
     @Override
     public void getInfo(){
-        JOptionPane.showMessageDialog(null, "Nombre de eps que pertenece: "+EPS+"\n"+
+        super.getInfo();
+        JOptionPane.showMessageDialog(null, 
+                                            "Información Paciente:"+"\n"+
+                                            "Nombre de eps que pertenece: "+eps+"\n"+
                                             "Regimen Contributivo: "+regimenContributivo+"\n"+
                                             "Estado: "+estado); 
     }

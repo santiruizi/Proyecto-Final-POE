@@ -8,123 +8,125 @@ package com.mycompany.parcial2poe.M_Citas;
     Gabriela Lourdes Gomez.
 */
 
+import javax.swing.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import javax.swing.*;
-import com.mycompany.parcial2poe.M_Paciente.Paciente;
-import com.mycompany.parcial2poe.M_Consultorio.Consultorio;
-public class Citas {
 
-    private String idCita;
-    private Paciente numeroDeDocumentoPaciente;
+public class Citas {
+    private Integer id_cita;
+    private Integer id_paciente;      
+    private Integer id_consultorio;   
     private LocalDate fechaCita;
     private LocalTime horaCita;
     private String tipoDeConsulta;
     private String estadoCita;
-    private Consultorio idConsultorio;
     private String nivelDeUrgencia;
 
-    // Constructor
-
-    public Citas(String idCita, Paciente numeroDeDocumentoPaciente, LocalDate fechaCita, LocalTime horaCita, String tipoDeConsulta, String estadoCita, Consultorio idConsultorio, String nivelDeUrgencia){
-        this.idCita = idCita;
-        this.numeroDeDocumentoPaciente = numeroDeDocumentoPaciente;
+    // Constructor para INSERCIÓN (sin id_cita)
+    public Citas(Integer id_paciente, Integer id_consultorio,
+                LocalDate fechaCita, LocalTime horaCita,
+                String tipoDeConsulta, String estadoCita,
+                String nivelDeUrgencia) {
+        this.id_paciente = id_paciente;
+        this.id_consultorio = id_consultorio;
         this.fechaCita = fechaCita;
         this.horaCita = horaCita;
         this.tipoDeConsulta = tipoDeConsulta;
         this.estadoCita = estadoCita;
-        this.idConsultorio = idConsultorio;
         this.nivelDeUrgencia = nivelDeUrgencia;
     }
 
-    // id de la cita
-
-    public String getIdCita(){
-        return idCita;
+    // Constructor para CONSULTA (con id_cita desde BD)
+    public Citas(Integer id_cita, Integer id_paciente, Integer id_consultorio,
+                LocalDate fechaCita, LocalTime horaCita,
+                String tipoDeConsulta, String estadoCita,
+                String nivelDeUrgencia) {
+        this.id_cita = id_cita;
+        this.id_paciente = id_paciente;
+        this.id_consultorio = id_consultorio;
+        this.fechaCita = fechaCita;
+        this.horaCita = horaCita;
+        this.tipoDeConsulta = tipoDeConsulta;
+        this.estadoCita = estadoCita;
+        this.nivelDeUrgencia = nivelDeUrgencia;
     }
 
-    public void setIdCita(String idCita){
-        this.idCita = idCita;
+    // ========== GETTERS Y SETTERS ==========
+
+    public Integer getId_Cita() {
+        return id_cita;
     }
 
-    // numero de documento del paciente.
-
-    public Paciente getPaciente(){
-        return numeroDeDocumentoPaciente;
+    public void setId_Cita(Integer id_cita) {
+        this.id_cita = id_cita;
     }
 
-    public void getNumeroDeDocumentoPaciente(Paciente numeroDeDocumentoPaciente){
-        this.numeroDeDocumentoPaciente = numeroDeDocumentoPaciente;
+    public Integer getId_Paciente() {  
+        return id_paciente;
     }
 
-    // fecha Cita este se maneja por dia, mes y año.
+    public void setId_Paciente(Integer id_paciente) {  
+        this.id_paciente = id_paciente;
+    }
 
-    public LocalDate getFechaCita(){
+    public Integer getId_Consultorio() {  
+        return id_consultorio;
+    }
+
+    public void setId_Consultorio(Integer id_consultorio) {  
+        this.id_consultorio = id_consultorio;
+    }
+
+    public LocalDate getFechaCita() {
         return fechaCita;
     }
 
-    public void setFechaCita(LocalDate fechaCita){
+    public void setFechaCita(LocalDate fechaCita) {
         this.fechaCita = fechaCita;
     }
 
-    // hora de la cita.
-
-    public LocalTime getHoraCita(){
+    public LocalTime getHoraCita() {
         return horaCita;
     }
 
-    public void setHoraCita(LocalTime horaCita){
+    public void setHoraCita(LocalTime horaCita) {
         this.horaCita = horaCita;
     }
 
-    // Tipo de consulta
-
-    public String getTipoDeConsulta(){
+    public String getTipoDeConsulta() {
         return tipoDeConsulta;
     }
 
-    public void setTipoDeConsulta(String tipoDeConsulta){
+    public void setTipoDeConsulta(String tipoDeConsulta) {
         this.tipoDeConsulta = tipoDeConsulta;
     }
 
-    // Estado Cita
-
-    public String getEstadoCita(){
+    public String getEstadoCita() {
         return estadoCita;
     }
 
-    public void setEstadoCita(String estadoCita){
+    public void setEstadoCita(String estadoCita) {
         this.estadoCita = estadoCita;
     }
 
-    // Id del consultorio.
-
-    public Consultorio getIdConsultorio(){
-        return  idConsultorio;
-    }
-
-    public void setIdConsultorio(Consultorio idConsultorio){
-        this.idConsultorio = idConsultorio;
-    }
-
-    // Nivel de urgenica
-
-    public String getNivelDeUrgencia(){
+    public String getNivelDeUrgencia() {
         return nivelDeUrgencia;
     }
 
-    public void setNivelDeUrgencia(String nivelDeUrgencia){
+    public void setNivelDeUrgencia(String nivelDeUrgencia) {
         this.nivelDeUrgencia = nivelDeUrgencia;
     }
 
-    public void mostrarInfoCita(){
-        JOptionPane.showMessageDialog(null, "ID de la cita: "+idCita+"\n"+
-                                                                "Numero de documento del paciente: "+numeroDeDocumentoPaciente+"\n"+
-                                                                "Fecha de la cita: "+fechaCita+"\n"+
-                                                                "Hora de la cita: "+horaCita+"\n"+
-                                                                "Tipo de consulta: "+tipoDeConsulta+"\n"+
-                                                                "Estado de la cita: "+estadoCita+"\n"+
-                                                                "ID del consultorio: "+idConsultorio+"'n"+
-                                                                "Nivel de urgencia: "+nivelDeUrgencia);
+    public void mostrarInfoCita() {
+        JOptionPane.showMessageDialog(null,
+            "━━━━━━ Información de la Cita ━━━━━━\n" +
+            "ID Cita: " + (id_cita != null ? id_cita : "Pendiente") + "\n" +
+            "ID Paciente: " + id_paciente + "\n" +
+            "ID Consultorio: " + id_consultorio + "\n" +
+            "Fecha: " + fechaCita + "\n" +
+            "Hora: " + horaCita + "\n" +
+            "Tipo de Consulta: " + tipoDeConsulta + "\n" +
+            "Estado: " + estadoCita + "\n" +
+            "Urgencia: " + nivelDeUrgencia);
     }
 }

@@ -12,96 +12,96 @@ import javax.swing.JOptionPane;
 
 import com.mycompany.parcial2poe.M_Empleados.Empleado;
 
+import javax.swing.JOptionPane;
+
 public class Consultorio {
-    private Integer idConsultorio;
+    private Integer id_consultorio;
     private String tipoDeConsultorio;
-    private Empleado idEmpleado;
+    private Integer id_empleado;        // ✅ Solo el ID (FK)
     private Integer extensionTelefono;
     private boolean estado;
     private String causa;
 
-    // Este lo trabajo antes de la creación del user captura los datos primordiales
-    public Consultorio(String tipoDeConsultorio, Integer extensionTelefono, boolean estado){
+    // Constructor para INSERCIÓN (captura inicial sin IDs)
+    public Consultorio(String tipoDeConsultorio, Integer id_empleado,
+                    Integer extensionTelefono, boolean estado, String causa) {
         this.tipoDeConsultorio = tipoDeConsultorio;
-        this.extensionTelefono = extensionTelefono;
-        this.estado = estado;
-    }    
-
-    // Este va ya cuando se monta la Dao y lo tengo en mysql
-    public Consultorio(Integer idConsultorio, String tipoDeConsultorio, Empleado idEmpleado, Integer extensionTelefono, boolean estado, String causa){
-        this.idConsultorio = idConsultorio;
-        this.tipoDeConsultorio = tipoDeConsultorio;
-        this.idEmpleado = idEmpleado;
+        this.id_empleado = id_empleado;
         this.extensionTelefono = extensionTelefono;
         this.estado = estado;
         this.causa = causa;
     }
 
-    // idConsultorio
-
-    public Integer getIdConsultorio(){
-        return idConsultorio;
+    // Constructor para CONSULTA (con id_consultorio desde BD)
+    public Consultorio(Integer id_consultorio, String tipoDeConsultorio,
+                    Integer id_empleado, Integer extensionTelefono,
+                    boolean estado, String causa) {
+        this.id_consultorio = id_consultorio;
+        this.tipoDeConsultorio = tipoDeConsultorio;
+        this.id_empleado = id_empleado;
+        this.extensionTelefono = extensionTelefono;
+        this.estado = estado;
+        this.causa = causa;
     }
 
-    public void setIdConsultorio(Integer idConsultorio){
-        this.idConsultorio = idConsultorio;
+    // ========== GETTERS Y SETTERS ==========
+
+    public Integer getId_Consultorio() {
+        return id_consultorio;
     }
 
-    // Tipo de Consultorio
+    public void setId_Consultorio(Integer id_consultorio) {
+        this.id_consultorio = id_consultorio;
+    }
 
-    public String getTipoDeConsultorio(){
+    public String getTipoDeConsultorio() {
         return tipoDeConsultorio;
     }
 
-    public void setTipoDeConsultorio(String tipoDeConsultorio){
+    public void setTipoDeConsultorio(String tipoDeConsultorio) {
         this.tipoDeConsultorio = tipoDeConsultorio;
     }
 
-    // idEmpleado
-
-    public Empleado getIdEmpleado(){
-        return idEmpleado;
+    public Integer getId_Empleado() {  
+        return id_empleado;
     }
 
-    public void setIdEmpleado(Empleado idEmpleado){
-        this.idEmpleado = idEmpleado;
+    public void setId_Empleado(Integer id_empleado) {  
+        this.id_empleado = id_empleado;
     }
 
-    // Extensión telefono.
-
-    public Integer getExtensionTelefono(){
+    public Integer getExtensionTelefono() {
         return extensionTelefono;
     }
 
-    public void setExtensionTelefono(Integer extensionTelefono){
+    public void setExtensionTelefono(Integer extensionTelefono) {
         this.extensionTelefono = extensionTelefono;
     }
 
-    // Estado
-
-    public boolean getEstado(){
+    public boolean isEstado() {  
         return estado;
     }
 
-    public void setEstado(boolean estado){
+    public void setEstado(boolean estado) {
         this.estado = estado;
     }
 
-    // Causa
-
-    public String getCausa(){
+    public String getCausa() {
         return causa;
     }
 
-    public void setCausa(String causa){
+    public void setCausa(String causa) {
         this.causa = causa;
     }
 
-    // información del consultorio
-
-    public void getInfoConsultorio(){
-        JOptionPane.showMessageDialog(null, "Tipo de consultorio: "+ tipoDeConsultorio +"\n"+
-                                                                "Extensión de telefono :"+extensionTelefono+"\n"+
-                                                                "Causa: "+ ((estado) ? "Activo": "Inactivo, (" + causa +")"));
+    public void getInfoConsultorio() {
+        JOptionPane.showMessageDialog(null,
+            "━━━━━━ Información del Consultorio ━━━━━━\n" +
+            "ID: " + (id_consultorio != null ? id_consultorio : "Pendiente") + "\n" +
+            "Tipo: " + tipoDeConsultorio + "\n" +
+            "ID Empleado: " + id_empleado + "\n" +
+            "Extensión: " + extensionTelefono + "\n" +
+            "Estado: " + (estado ? "Activo" : "Inactivo") + "\n" +
+            (causa != null ? "Causa: " + causa : ""));
     }
 }

@@ -1,0 +1,8 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ],
+    "java.jdt.ls.vmargs": "-Xmx512m -Xms128m"
+}
