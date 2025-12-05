@@ -28,15 +28,15 @@ public class TestPersonaDAO {
             // 3. Crear una persona de prueba (constructor SIN id)
             Persona personaPrueba = new Persona(
                 "CC",                           // tipoDeDocumento
-                123456789,                      // numeroDeDocumento
+                123456789L,                      // numeroDeDocumento
                 "Juan Pérez Test",              // nombreCompleto
                 LocalDate.of(1995, 3, 15),     // fechaDeNacimiento
                 "Cali",                         // ciudadDeResidencia
                 "Colombia",                     // paisDeResidencia
                 "Estudiante",                   // ocupacion
                 "Calle 10 #20-30",             // direccion
-                3201234,                        // telefonoFijo
-                308761004                      // celular
+                3201234L,                        // telefonoFijo
+                308761004L                    // celular
             );
             
             // 4. Insertar en la BD

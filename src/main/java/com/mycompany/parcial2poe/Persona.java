@@ -18,19 +18,19 @@ import javax.swing.*;
 public class Persona {
     private int id_persona;
     private String tipoDeDocumento;
-    private Integer numeroDeDocumento;
+    private Long numeroDeDocumento;
     private String nombreCompleto;
     private LocalDate fechaDeNacimiento;
     private String direccion;
     private String ciudadDeResidencia;
     private String paisDeResidencia;
     private String ocupacion;
-    private Integer celular;
-    private Integer telefonoFijo;
+    private Long celular;
+    private Long telefonoFijo;
 
     // Constructor este es para insertar datos, y se llene el formulario, para que se inicialize la llave primaria despues del registro
 
-    public Persona(String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular) {
+    public Persona(String tipoDeDocumento, Long numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Long telefonoFijo, Long celular) {
         this.tipoDeDocumento = tipoDeDocumento;
         this.numeroDeDocumento = numeroDeDocumento;
         this.nombreCompleto = nombreCompleto;
@@ -45,7 +45,7 @@ public class Persona {
 
     // Este constructor ya tiene el registro, con su valor primario
 
-    public Persona(int id_persona,String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular) {
+    public Persona(int id_persona,String tipoDeDocumento, Long numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Long telefonoFijo, Long celular) {
         this.id_persona = id_persona;
         this.tipoDeDocumento = tipoDeDocumento;
         this.numeroDeDocumento = numeroDeDocumento;
@@ -81,11 +81,11 @@ public class Persona {
 
     // Numero de documento
     
-    public Integer getNumeroDeDocumento() {
+    public Long getNumeroDeDocumento() {
         return numeroDeDocumento;
     }
 
-    public void setNumeroDeDocumento(Integer numeroDeDocumento) {
+    public void setNumeroDeDocumento(long numeroDeDocumento) {
         this.numeroDeDocumento = numeroDeDocumento;
     }
 
@@ -150,21 +150,21 @@ public class Persona {
     
     // Celular
     
-    public Integer getCelular(){
+    public Long getCelular(){
         return celular;
     }
     
-    public void setCelular(Integer celular){
+    public void setCelular(Long celular){
         this.celular = celular;
     }
     
     // Telefono fijo
     
-    public Integer getTelefonoFijo(){
+    public Long getTelefonoFijo(){
         return telefonoFijo;
     }
     
-    public void setTelefonoFijo(Integer telefonoFijo){
+    public void setTelefonoFijo(Long telefonoFijo){
         this.telefonoFijo = telefonoFijo;
     }
     public void getInfo(){

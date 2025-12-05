@@ -23,7 +23,7 @@ public class FuncionesEmpleados {
         JOptionPane.showMessageDialog(null, "El ordenamiento fue un exito.");
     }
     
-    public Empleado buscarPorDocumento(Empleado[] empleados, Integer numeroDeDocumento, int contadorEmpleados){
+    public Empleado buscarPorDocumento(Empleado[] empleados, Long numeroDeDocumento, int contadorEmpleados){
         int izquierda = 0, derecha = contadorEmpleados;
         while (izquierda <= derecha) {
             int medio = (izquierda + derecha) / 2;
@@ -56,13 +56,13 @@ public class FuncionesEmpleados {
     }
     
     public void mostarAlfabeticamente(Empleado[] empleados, int contadorEmpleados){
-       Empleado[] copia = Arrays.copyOf(empleados, contadorEmpleados);
-       for(Empleado e : copia){
-           e.getInfo();
-       }
+        Empleado[] copia = Arrays.copyOf(empleados, contadorEmpleados);
+        for(Empleado e : copia){
+            e.getInfo();
+        }
     }
     
-    public void eliminarEmpleado(Empleado[] empleados, int contadorEmpleados, Integer numeroDeDocumento){
+    public void eliminarEmpleado(Empleado[] empleados, int contadorEmpleados, Long numeroDeDocumento){
         for (int i = 0; i < contadorEmpleados; i++) {
             if (empleados[i].getNumeroDeDocumento().equals(numeroDeDocumento)) {
                 for (int j = i; j < contadorEmpleados - 1; j++) {

@@ -19,7 +19,7 @@ public class IngresoPaciente {
     public int ingresoP(Paciente[] pacientes,int contadorPacientes){
         
         String tipoDeDocumento, nombreCompleto, strFechaDeNacimiento, ciudadDeResidencia, paisDeResidencia, direccion, ocupacion, EPS, regimenContributivo;
-        Integer numeroDeDocumento, telefonoFijo, celular;
+        Long numeroDeDocumento, telefonoFijo, celular;
         LocalDate fechaDeNacimiento;
         
         tipoDeDocumento = JOptionPane.showInputDialog("Digit el tipo de documento(TI, CC, CE): ");
@@ -28,10 +28,10 @@ public class IngresoPaciente {
             tipoDeDocumento = JOptionPane.showInputDialog("Digit el tipo de documento(TI, CC, CE): ");
         }
         
-        numeroDeDocumento = Integer.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
+        numeroDeDocumento = Long.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
         while(numeroDeDocumento <= 0 || numeroDeDocumento > 9999999999L){
             JOptionPane.showMessageDialog(null, "El numero de documento es invalido.");
-            numeroDeDocumento = Integer.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
+            numeroDeDocumento = Long.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
         }
         
         nombreCompleto = JOptionPane.showInputDialog("Digite su nombre completo: ");
@@ -65,10 +65,10 @@ public class IngresoPaciente {
             direccion = JOptionPane.showInputDialog("Digite su dirección: ");
         }
         
-        telefonoFijo = Integer.valueOf(JOptionPane.showInputDialog("Digite el telefono fijo: "));
+        telefonoFijo = Long.valueOf(JOptionPane.showInputDialog("Digite el telefono fijo: "));
         while(telefonoFijo <= 0 || telefonoFijo > 9999999999L){
             JOptionPane.showMessageDialog(null, "El telefono fijo es invalido.");
-            telefonoFijo = Integer.valueOf(JOptionPane.showInputDialog("Digite el telefono fijo: "));
+            telefonoFijo = Long.valueOf(JOptionPane.showInputDialog("Digite el telefono fijo: "));
         }
         
         ocupacion = JOptionPane.showInputDialog("Digit su ocupación: ");
@@ -77,10 +77,10 @@ public class IngresoPaciente {
             ocupacion = JOptionPane.showInputDialog("Digit su ocupación: ");
         }
         
-        celular = Integer.valueOf(JOptionPane.showInputDialog("Digite su celular: "));
+        celular = Long.valueOf(JOptionPane.showInputDialog("Digite su celular: "));
         while(celular <= 0 || celular > 9999999999L){
             JOptionPane.showMessageDialog(null, "Numero de celular es invalido.");
-            celular = Integer.valueOf(JOptionPane.showInputDialog("Digite su celular: "));
+            celular = Long.valueOf(JOptionPane.showInputDialog("Digite su celular: "));
         }
         
         EPS = JOptionPane.showInputDialog("Digite su eps: ");
@@ -95,7 +95,8 @@ public class IngresoPaciente {
             regimenContributivo = JOptionPane.showInputDialog("Digite su regimen contributivo(Contributivo o Subsidiado)");
         }
         
-        Paciente newPaciente = new Paciente("C.C.",
+        /*Paciente newPaciente = new Paciente(
+        "C.C.",
         1020304050,
         "Ana María Pérez López",
         LocalDate.of(1995, 8, 15),
@@ -103,11 +104,27 @@ public class IngresoPaciente {
         "Bogotá",
         "Colombia",
         "Ingeniera de Sistemas",
-        123,
+        3027610047,
         123,
         "Sura",
         "contributivo",
-        false);
+        false);*/
+
+        Paciente newPaciente = new Paciente(
+            "CC",
+            1092456576L,
+            "Santiago Ruiz Gallego",
+            LocalDate.of(1995, 8, 15),
+            "cali",
+            "colombia",
+            "Ingeniero de sistemas",
+            "Parchar",
+            3027610047L,
+            31222228796L,
+            "Sura",
+            "Contributivo",
+            false
+        );
         
         newPaciente.setTipoDeDocumento(tipoDeDocumento);
         newPaciente.setNumeroDeDocumento(numeroDeDocumento);

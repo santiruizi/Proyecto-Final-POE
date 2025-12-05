@@ -54,11 +54,12 @@ public class Modulo_Empleado {
                 case 3->{
                     if(funciones.verificarExistencia(contadorEmpleados)) break;
                     
-                    Integer newNumeroDeDocumento;
+                    Long newNumeroDeDocumento;
                     
-                    newNumeroDeDocumento = Integer.valueOf(JOptionPane.showInputDialog("Digite el numero de cedula: "));
+                    newNumeroDeDocumento = Long.valueOf(JOptionPane.showInputDialog("Digite el numero de cedula: "));
                     while(newNumeroDeDocumento <= 0 || newNumeroDeDocumento > 9999999999L){
                         JOptionPane.showMessageDialog(null, "Digite el numero de documento.");
+                        newNumeroDeDocumento = Long.valueOf(JOptionPane.showInputDialog("Digite el numero de cedula: "));
                     }
                     
                     funciones.buscarPorDocumento(empleados, newNumeroDeDocumento, contadorEmpleados);
@@ -113,12 +114,12 @@ public class Modulo_Empleado {
                 case 9->{
                     if(funciones.verificarExistencia(contadorEmpleados)) break;
                     
-                    Integer numeroDeDocumento;
+                    Long numeroDeDocumento;
                     
-                    numeroDeDocumento = Integer.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
+                    numeroDeDocumento = Long.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
                     while(numeroDeDocumento <= 0 || numeroDeDocumento > 9999999999L){
                         JOptionPane.showMessageDialog(null, "El numero de documento es invalido.");
-                        numeroDeDocumento = Integer.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
+                        numeroDeDocumento = Long.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
                     }
                     
                     funciones.eliminarEmpleado(empleados, contadorEmpleados, numeroDeDocumento);

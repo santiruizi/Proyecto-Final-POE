@@ -32,7 +32,7 @@ public class FuncionesPacientes {
         JOptionPane.showMessageDialog(null, "El ordenamiento fue un exito.");
     }
     
-    public void busquedaPorNumeroDeDocumento(Paciente[] pacientes, int contadorPacientes, Integer numeroDeDocumento){
+    public void busquedaPorNumeroDeDocumento(Paciente[] pacientes, int contadorPacientes, Long numeroDeDocumento){
         for(int i = 0; i < contadorPacientes; i++){
             if(pacientes[i].getNumeroDeDocumento().equals(numeroDeDocumento)){
                 JOptionPane.showMessageDialog(null, "Este paciente existe.");
@@ -72,7 +72,7 @@ public class FuncionesPacientes {
         JOptionPane.showMessageDialog(null, "El paciente no existe.");
     }
     
-    public void eliminarEmpleado(Paciente[] pacientes, int contadorPacientes, Integer numeroDeDocumento){
+    public void eliminarEmpleado(Paciente[] pacientes, int contadorPacientes, Long numeroDeDocumento){
         for (int i = 0; i < contadorPacientes; i++) {
             if (pacientes[i].getNumeroDeDocumento().equals(numeroDeDocumento)) {
                 for (int j = i; j < contadorPacientes - 1; j++) {

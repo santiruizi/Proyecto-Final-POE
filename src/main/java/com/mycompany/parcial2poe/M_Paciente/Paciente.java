@@ -23,7 +23,7 @@ public class Paciente extends Persona{
     private boolean estado;
     
     // Se hace la captura de los datos, para despues con el otro constructor asigarle la llave y despues se hace la copia en Dao
-    public Paciente(String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular, String eps, String regimenContributivo, boolean estado){
+    public Paciente(String tipoDeDocumento, Long numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Long telefonoFijo, long celular, String eps, String regimenContributivo, boolean estado){
         super(tipoDeDocumento, numeroDeDocumento, nombreCompleto, fechaDeNacimiento, ciudadDeResidencia, paisDeResidencia, ocupacion, direccion, telefonoFijo, celular);
         this.eps = eps;
         this.regimenContributivo = regimenContributivo;
@@ -31,7 +31,7 @@ public class Paciente extends Persona{
     }
 
     // Constructor el cual hace el registro en Dao
-    public Paciente(int id_persona,String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular, String eps, String regimenContributivo, boolean estado, Integer id_paciente){
+    public Paciente(int id_persona,String tipoDeDocumento, Long numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Long telefonoFijo, Long celular, String eps, String regimenContributivo, boolean estado, Integer id_paciente){
         super(id_persona, tipoDeDocumento, numeroDeDocumento, nombreCompleto, fechaDeNacimiento, ciudadDeResidencia, paisDeResidencia, ocupacion, direccion, telefonoFijo, celular);
         this.id_paciente = id_paciente;
         this.eps = eps;

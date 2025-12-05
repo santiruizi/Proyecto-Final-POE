@@ -19,7 +19,7 @@ public class IngresoEmpleados {
     public int ingreso_E(Empleado[] empleados, int contadorEmpleados){
         
         String tipoDeDocumento, nombreCompleto, strFechaDeNacimiento, ciudadDeResidencia, cargo, paisDeResidencia, direccion;
-        Integer numeroDeDocumento, celular, telefonoFijo;
+        Long numeroDeDocumento, celular, telefonoFijo;
         
         LocalDate fechaDeNacimiento;
         
@@ -29,10 +29,10 @@ public class IngresoEmpleados {
             tipoDeDocumento = JOptionPane.showInputDialog("Digite el tipo de documento(TI, CC, CE): ");
         }
         
-        numeroDeDocumento = Integer.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
+        numeroDeDocumento = Long.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
         while(numeroDeDocumento <= 0 || numeroDeDocumento > 9999999999L){
             JOptionPane.showMessageDialog(null, "El numero de documento es invalido.");
-            numeroDeDocumento = Integer.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
+            numeroDeDocumento = Long.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
         }
         
         nombreCompleto = JOptionPane.showInputDialog("Digite el nombre completo: ");
@@ -72,30 +72,32 @@ public class IngresoEmpleados {
             cargo = JOptionPane.showInputDialog("Digite su cargo actual(Enfermer@-Medic@): ");
         }
         
-        celular = Integer.valueOf(JOptionPane.showInputDialog("Digite el numero de celular: "));
+        celular = Long.valueOf(JOptionPane.showInputDialog("Digite el numero de celular: "));
         while(celular <= 0 || celular > 9999999999L){
             JOptionPane.showMessageDialog(null, "El celular es invalido.");
-            celular = Integer.valueOf(JOptionPane.showInputDialog("Digite el numero de celular: "));
+            celular = Long.valueOf(JOptionPane.showInputDialog("Digite el numero de celular: "));
         }
         
-        telefonoFijo = Integer.valueOf(JOptionPane.showInputDialog("Digit el telefono fijo: "));
+        telefonoFijo = Long.valueOf(JOptionPane.showInputDialog("Digit el telefono fijo: "));
         while(telefonoFijo <= 0 || telefonoFijo > 9999999999L){
             JOptionPane.showMessageDialog(null, "Telefono fijo invalido.");
-            telefonoFijo = Integer.valueOf(JOptionPane.showInputDialog("Digit el telefono fijo: "));
+            telefonoFijo = Long.valueOf(JOptionPane.showInputDialog("Digit el telefono fijo: "));
         }
         
         
-        Empleado newEmpleado = new Empleado("C.C.",
-        1020304050,
-        "Ana María Pérez López",
-        LocalDate.of(1995, 8, 15),
-        "Carrera 10 # 50-25",
-        "Bogotá",
-        "Colombia",
-        "Enfermera profesional",
-        123,
-        123,
-        "Jefe de enfermeria");
+        Empleado newEmpleado = new Empleado(
+            "CC",
+            1092456576L,
+            "Juliana Villada Gallego",
+            LocalDate.of(1995, 07, 15),
+            "Cali",
+            "Colombia",
+            "Enfermera",
+            "Call",
+            3147567353L,
+            3027610047L,
+            "Jefe de enfermeras"
+        );
         
         newEmpleado.setTipoDeDocumento(tipoDeDocumento);
         newEmpleado.setNumeroDeDocumento(numeroDeDocumento);

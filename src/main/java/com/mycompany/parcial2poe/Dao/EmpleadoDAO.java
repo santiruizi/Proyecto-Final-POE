@@ -170,15 +170,15 @@ public class EmpleadoDAO {
         return new Empleado(
             rs.getInt("id_persona"),
             rs.getString("tipoDeDocumento"),
-            rs.getInt("numeroDeDocumento"),
+            rs.getLong("numeroDeDocumento"),
             rs.getString("nombreCompleto"),
             rs.getDate("fechaDeNacimiento").toLocalDate(),
             rs.getString("ciudadDeResidencia"),
             rs.getString("paisDeResidencia"),
             rs.getString("ocupacion"),
             rs.getString("direccion"),
-            rs.getInt("telefonoFijo"),
-            rs.getInt("celular"),
+            rs.getLong("telefonoFijo"),
+            rs.getLong("celular"),
             rs.getString("cargo"),
             rs.getInt("id_empleado")
         );

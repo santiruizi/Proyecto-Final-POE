@@ -26,10 +26,10 @@ public class TestPacienteDAO {
             
             // Crear paciente de prueba
             Paciente pacientePrueba = new Paciente(
-                "CC", 987654321, "María García Test",
+                "CC", 987654351L, "María García Test",
                 LocalDate.of(1992, 7, 20),
                 "Cali", "Colombia", "Profesora",
-                "Carrera 5 #10-20", 3305678, 315987654,
+                "Carrera 5 #10-20", 3305678L, 315987654L,
                 "Salud Total", "Contributivo", true
             );
             

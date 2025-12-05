@@ -53,14 +53,14 @@ public class Modulo_Paciente {
                 }
                 
                 case 3->{
-                    if(funcionesP.validarPaciente(contadorPacientes));
+                    if(funcionesP.validarPaciente(contadorPacientes)) break;
                     
-                    Integer numeroDeDocumento;
+                    Long numeroDeDocumento;
                     
-                    numeroDeDocumento = Integer.valueOf(JOptionPane.showInputDialog("Digite su numero de documento: "));
+                    numeroDeDocumento = Long.valueOf(JOptionPane.showInputDialog("Digite su numero de documento: "));
                     while(numeroDeDocumento <= 0 || numeroDeDocumento > 9999999999L){
                         JOptionPane.showMessageDialog(null, "El numero de documento es invalido.");
-                        numeroDeDocumento = Integer.valueOf(JOptionPane.showInputDialog("Digite su numero de documento: "));
+                        numeroDeDocumento = Long.valueOf(JOptionPane.showInputDialog("Digite su numero de documento: "));
                     }
                     funcionesP.busquedaPorNumeroDeDocumento(pacientes, contadorPacientes, numeroDeDocumento);
                     break;
@@ -130,12 +130,12 @@ public class Modulo_Paciente {
                 case 9->{
                     if(funcionesP.validarPaciente(contadorPacientes)) break;
                     
-                    Integer numeroDeDocumento;
+                    Long numeroDeDocumento;
                     
-                    numeroDeDocumento = Integer.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
+                    numeroDeDocumento = Long.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
                     while(numeroDeDocumento <= 0 || numeroDeDocumento > 9999999999L){
                         JOptionPane.showMessageDialog(null, "El numero de documento es invalido.");
-                        numeroDeDocumento = Integer.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
+                        numeroDeDocumento = Long.valueOf(JOptionPane.showInputDialog("Digite el numero de documento: "));
                     }
                     
                     funcionesP.eliminarEmpleado(pacientes, contadorPacientes, numeroDeDocumento);
@@ -144,5 +144,6 @@ public class Modulo_Paciente {
             }
             opc2 = Integer.valueOf(JOptionPane.showInputDialog("Desea hacer otro proceso? (1. Si / 2. No)"));
         }while(opc2 != 2);
+        JOptionPane.showMessageDialog(null, "Usted ha salido del modulo pacientes.");
     }
 }

@@ -22,13 +22,13 @@ public class Empleado extends Persona{
     
     // Constructor ademas se hereda los atributos de la clase madre.
     // Esta la uso para capturar los datos antes de usar el esquema de la .
-    public Empleado(String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular, String cargo){
+    public Empleado(String tipoDeDocumento, Long numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Long telefonoFijo, long celular, String cargo){
         // El super: es el metodo en el cual se organiza los datos heredados dentro del constructor
         super(tipoDeDocumento, numeroDeDocumento, nombreCompleto, fechaDeNacimiento, ciudadDeResidencia, paisDeResidencia, ocupacion, direccion, celular, telefonoFijo);
         this.cargo = cargo;
     }
 
-    public Empleado(int id_persona,String tipoDeDocumento, Integer numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Integer telefonoFijo, Integer celular, String cargo, int id_empleado){
+    public Empleado(int id_persona,String tipoDeDocumento, Long numeroDeDocumento, String nombreCompleto, LocalDate fechaDeNacimiento, String ciudadDeResidencia, String paisDeResidencia, String ocupacion,String direccion, Long telefonoFijo, Long celular, String cargo, int id_empleado){
         // El super: es el metodo en el cual se organiza los datos heredados dentro del constructor
         super(id_persona,tipoDeDocumento, numeroDeDocumento, nombreCompleto, fechaDeNacimiento, ciudadDeResidencia, paisDeResidencia, ocupacion, direccion, celular, telefonoFijo);
         this.cargo = cargo;

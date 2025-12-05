@@ -46,24 +46,24 @@ public class ModificarE {
                         }
                         
                         case 2 ->{
-                            Integer newTelefonoFijo;
+                            Long newTelefonoFijo;
                             
-                            newTelefonoFijo = Integer.valueOf(JOptionPane.showInputDialog("Digite el nuevo telefono fijo: "));
+                            newTelefonoFijo = Long.valueOf(JOptionPane.showInputDialog("Digite el nuevo telefono fijo: "));
                             while(newTelefonoFijo <= 0 || newTelefonoFijo > 9999999999L){
                                 JOptionPane.showMessageDialog(null, "El cambio de telefono fijo, no ha sido posible.");
-                                newTelefonoFijo = Integer.valueOf(JOptionPane.showInputDialog("Digite el nuevo telefono fijo: "));
+                                newTelefonoFijo = Long.valueOf(JOptionPane.showInputDialog("Digite el nuevo telefono fijo: "));
                             }
                             e.setTelefonoFijo(newTelefonoFijo);
                             break;
                         }
                         
                         case 3->{
-                            Integer newCelular;
+                            Long newCelular;
                             
-                            newCelular = Integer.valueOf(JOptionPane.showInputDialog("Digite el nuevo numero de celular: "));
+                            newCelular = Long.valueOf(JOptionPane.showInputDialog("Digite el nuevo numero de celular: "));
                             while(newCelular <= 0 || newCelular > 9999999999L){
                                 JOptionPane.showMessageDialog(null, "El nuevo numero de celular, no ha sido posible el registro.");
-                                newCelular = Integer.valueOf(JOptionPane.showInputDialog("Digite el nuevo numero de celular: "));
+                                newCelular = Long.valueOf(JOptionPane.showInputDialog("Digite el nuevo numero de celular: "));
                             }
                             e.setCelular(newCelular);
                             break;

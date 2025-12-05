@@ -24,10 +24,10 @@ public class TestEmpleadoDAO {
             EmpleadoDAO empleadoDAO = new EmpleadoDAO(conexion);
             
             Empleado empleadoPrueba = new Empleado(
-                "CC", 555666777, "Dr. Carlos Martínez",
+                "CC", 1092456576L, "Dr. Carlos Martínez",
                 LocalDate.of(1985, 4, 10),
                 "Cali", "Colombia", "Médico",
-                "Avenida 6 #30-50", 3307890, 320123456,
+                "Avenida 6 #30-50", 3027610047L, 3147567353L,
                 "Médico General"
             );
             

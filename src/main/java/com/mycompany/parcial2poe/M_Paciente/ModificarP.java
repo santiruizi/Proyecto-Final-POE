@@ -48,12 +48,12 @@ public class ModificarP {
                         }
                         
                         case 2->{
-                            Integer newTelefonoFijo;
+                            Long newTelefonoFijo;
                             
-                            newTelefonoFijo = Integer.valueOf(JOptionPane.showInputDialog("Digite su nuevo telefono fijo: "));
+                            newTelefonoFijo = Long.valueOf(JOptionPane.showInputDialog("Digite su nuevo telefono fijo: "));
                             while(newTelefonoFijo <= 0 || newTelefonoFijo > 9999999999L){
                                 JOptionPane.showMessageDialog(null, "El telefono fijo es invalido.");
-                                newTelefonoFijo = Integer.valueOf(JOptionPane.showInputDialog("Digite su nuevo telefono fijo: "));
+                                newTelefonoFijo = Long.valueOf(JOptionPane.showInputDialog("Digite su nuevo telefono fijo: "));
                             }
                             e.setTelefonoFijo(newTelefonoFijo);
                             JOptionPane.showMessageDialog(null, "La modificación fue un exito.");
@@ -61,12 +61,12 @@ public class ModificarP {
                         }
                         
                         case 3->{
-                            Integer newCelular;
+                            Long newCelular;
                             
-                            newCelular = Integer.valueOf(JOptionPane.showInputDialog("Digite su numero de celular: "));
+                            newCelular = Long.valueOf(JOptionPane.showInputDialog("Digite su numero de celular: "));
                             while(newCelular <= 0 || newCelular > 9999999999L){
                                 JOptionPane.showMessageDialog(null, "El numero de celular es invalido.");
-                                newCelular = Integer.valueOf(JOptionPane.showInputDialog("Digite su numero de celular: "));
+                                newCelular = Long.valueOf(JOptionPane.showInputDialog("Digite su numero de celular: "));
                             }
                             e.setCelular(newCelular);
                             JOptionPane.showMessageDialog(null, "La modificación fue un exito.");

@@ -35,15 +35,15 @@ public class PersonaDAO {
             Statement.RETURN_GENERATED_KEYS)) {
             
             ps.setString(1, persona.getTipoDeDocumento());
-            ps.setInt(2, persona.getNumeroDeDocumento());
+            ps.setLong(2, persona.getNumeroDeDocumento());
             ps.setString(3, persona.getNombreCompleto());
             ps.setDate(4, Date.valueOf(persona.getFechaDeNacimiento()));
             ps.setString(5, persona.getCiudadDeResidencia());
             ps.setString(6, persona.getPaisDeResidencia());
             ps.setString(7, persona.getOcupacion());
             ps.setString(8, persona.getDireccion());
-            ps.setInt(9, persona.getTelefonoFijo());
-            ps.setInt(10, persona.getCelular());
+            ps.setLong(9, persona.getTelefonoFijo());
+            ps.setLong(10, persona.getCelular());
             
             int filasAfectadas = ps.executeUpdate();
             
@@ -90,15 +90,15 @@ public class PersonaDAO {
         
         try (PreparedStatement ps = conexion.prepareStatement(sql)) {
             ps.setString(1, persona.getTipoDeDocumento());
-            ps.setInt(2, persona.getNumeroDeDocumento());
+            ps.setLong(2, persona.getNumeroDeDocumento());
             ps.setString(3, persona.getNombreCompleto());
             ps.setDate(4, Date.valueOf(persona.getFechaDeNacimiento()));
             ps.setString(5, persona.getCiudadDeResidencia());
             ps.setString(6, persona.getPaisDeResidencia());
             ps.setString(7, persona.getOcupacion());
             ps.setString(8, persona.getDireccion());
-            ps.setInt(9, persona.getTelefonoFijo());
-            ps.setInt(10, persona.getCelular());
+            ps.setLong(9, persona.getTelefonoFijo());
+            ps.setLong(10, persona.getCelular());
             ps.setInt(11, persona.getId_Persona());
             
             return ps.executeUpdate() > 0;
@@ -124,15 +124,15 @@ public class PersonaDAO {
         return new Persona(
             rs.getInt("id_persona"),
             rs.getString("tipoDeDocumento"),
-            rs.getInt("numeroDeDocumento"),
+            rs.getLong("numeroDeDocumento"),
             rs.getString("nombreCompleto"),
             rs.getDate("fechaDeNacimiento").toLocalDate(),
             rs.getString("ciudadDeResidencia"),
             rs.getString("paisDeResidencia"),
             rs.getString("ocupacion"),
             rs.getString("direccion"),
-            rs.getInt("telefonoFijo"),
-            rs.getInt("celular")
+            rs.getLong("telefonoFijo"),
+            rs.getLong("celular")
         );
     }
 }
